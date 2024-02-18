@@ -1,0 +1,1220 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\definecolor{blue}{RGB}{14,107,217}
+\definecolor{green}{RGB}{0,158,40}
+\definecolor{red}{RGB}{235,16,16}
+\definecolor{brown}{RGB}{164,66,0}
+\definecolor{orange}{RGB}{231,135,26}
+\definecolor{purple}{RGB}{94,53,177}
+\end_preamble
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-std
+theorems-chap
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 11
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #b7cfed
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 3cm
+\headheight 0cm
+\headsep 0cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+(76915) Information and Coding in the Brain - Exercise 1
+\end_layout
+
+\begin_layout Author
+Name: Nadav Lederman ID: 208585760
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 1
+\end_layout
+
+\begin_layout Standard
+Assume a Bayesian decision problem with 
+\begin_inset Formula $\Omega=\left\{ \omega_{0},\omega_{1}\right\} $
+\end_inset
+
+ and 
+\begin_inset Formula $A=\left\{ \alpha_{0},\alpha_{1}\right\} $
+\end_inset
+
+, where 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+ means that we decide that the state of the world is 
+\begin_inset Formula $\omega_{i}$
+\end_inset
+
+.
+ The cost function is given by 
+\begin_inset Formula $\lambda\left(\alpha_{i}|\omega_{j}\right)=\lambda_{ij}$
+\end_inset
+
+, for 
+\begin_inset Formula $i,j\in\left\{ 0,1\right\} $
+\end_inset
+
+ and you may assume that 
+\begin_inset Formula $\lambda_{10}>\lambda_{00}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Write the conditional risk in this case, i.e 
+\begin_inset Formula $R\left[\alpha_{i}|x\right]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Answer:
+\series default
+ The conditional risk is:
+\begin_inset Formula 
+\[
+R\left[\alpha_{i}|x\right]=\sum_{\omega}\lambda\left(\alpha_{i},\omega\right)p\left(\omega|x\right)=\lambda_{i0}p\left(\omega_{0}|x\right)+\lambda_{i1}p\left(\omega_{1}|x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Show that the optimal strategy 
+\begin_inset Formula $\delta^{*}$
+\end_inset
+
+, picks 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ given an observation 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ iff 
+\begin_inset Formula 
+\[
+\left(\lambda_{10}-\lambda_{00}\right)p\left(\omega_{0}|x\right)\geq\left(\lambda_{01}-\lambda_{11}\right)p\left(\omega_{1}|x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Answer:
+\series default
+ We know the optimal solution is of the form 
+\begin_inset Formula 
+\[
+\delta^{*}\left(x\right)=\mathrm{argmin}_{\delta\left(x\right)}\left(R\left[\delta\left(x\right)|x\right]\right)=\mathrm{argmin}_{\delta\left(x\right)}\left(R\left[\alpha_{0}|x\right],R\left[\alpha_{1}|x\right]\right)
+\]
+
+\end_inset
+
+Lets assume 
+\begin_inset Formula $\delta^{*}$
+\end_inset
+
+ picks 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ for observation 
+\begin_inset Formula $x\in X$
+\end_inset
+
+, this happens iff due to optimality of 
+\begin_inset Formula $\delta^{*}$
+\end_inset
+
+ the following is true
+\begin_inset Formula 
+\[
+\lambda_{00}p\left(\omega_{0}|x\right)+\lambda_{01}p\left(\omega_{1}|x\right)=R\left[\alpha_{0}|x\right]\leq R\left[\alpha_{1}|x\right]=\lambda_{10}p\left(\omega_{0}|x\right)+\lambda_{11}p\left(\omega_{1}|x\right)
+\]
+
+\end_inset
+
+Now we swap the order of inequality and get that the following is true 
+\begin_inset Formula 
+\[
+\lambda_{00}p\left(\omega_{0}|x\right)+\lambda_{01}p\left(\omega_{1}|x\right)\leq\lambda_{10}p\left(\omega_{0}|x\right)+\lambda_{11}p\left(\omega_{1}|x\right)\Leftrightarrow\left(\lambda_{10}-\lambda_{00}\right)p\left(\omega_{0}|x\right)\geq\left(\lambda_{01}-\lambda_{11}\right)p\left(\omega_{1}|x\right)
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Conclude that for every observation 
+\begin_inset Formula $x\in X$
+\end_inset
+
+, 
+\begin_inset Formula $\delta^{*}\left(x\right)=\alpha_{0}$
+\end_inset
+
+ iff
+\begin_inset Formula 
+\[
+\frac{p\left(x|\omega_{0}\right)}{p\left(x|\omega_{1}\right)}\geq\frac{p\left(\omega_{1}\right)\left(\lambda_{01}-\lambda_{11}\right)}{p\left(\omega_{0}\right)\left(\lambda_{10}-\lambda_{00}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Answer:
+\series default
+ Let 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ be some observation, from last question we know 
+\begin_inset Formula $\delta^{*}$
+\end_inset
+
+ chooses 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ iff 
+\begin_inset Formula 
+\[
+\left(\lambda_{10}-\lambda_{00}\right)p\left(\omega_{0}|x\right)\geq\left(\lambda_{01}-\lambda_{11}\right)p\left(\omega_{1}|x\right)
+\]
+
+\end_inset
+
+Using Bayes rule where 
+\begin_inset Formula $p\left(\omega_{i}|x\right)=\frac{p\left(x|\omega_{i}\right)p\left(\omega_{i}\right)}{p\left(x\right)}$
+\end_inset
+
+ we get:
+\begin_inset Formula 
+\[
+\left(\lambda_{10}-\lambda_{00}\right)\frac{p\left(x|\omega_{0}\right)p\left(\omega_{0}\right)}{p\left(x\right)}\geq\left(\lambda_{01}-\lambda_{11}\right)\frac{p\left(x|\omega_{1}\right)p\left(\omega_{1}\right)}{p\left(x\right)}\Leftrightarrow\frac{p\left(x|\omega_{0}\right)}{p\left(x|\omega_{1}\right)}\geq\frac{\left(\lambda_{01}-\lambda_{11}\right)}{\left(\lambda_{10}-\lambda_{00}\right)}\cdot\frac{p\left(\omega_{1}\right)}{p\left(\omega_{0}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where the last transition is possible since 
+\begin_inset Formula $\lambda_{10}-\lambda_{00}>0$
+\end_inset
+
+ and all probabilities are positive.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 2
+\end_layout
+
+\begin_layout Standard
+Given the following data:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\quad$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quality
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Good
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mediocre
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bad
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Prior 
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\quad$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quality
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Good
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mediocre
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bad
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interesting
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Boring
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Formula $\quad$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quality
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Good
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mediocre
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bad
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Attending
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Not Attending
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Compute the conditional risk function and find the optimal strategy with
+ its total risk.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Answer:
+\series default
+ First we denote the matrices:
+\begin_inset Formula 
+\begin{align*}
+\text{Prior:} & \left(\begin{array}{ccc}
+0.2 & 0.4 & 0.4\end{array}\right)\\
+\text{Conditional:} & \left(\begin{array}{ccc}
+0.8 & 0.5 & 0.1\\
+0.2 & 0.5 & 0.9
+\end{array}\right)\\
+\text{Cost:} & \left(\begin{array}{ccc}
+0 & 7 & 10\\
+20 & 5 & 0
+\end{array}\right)
+\end{align*}
+
+\end_inset
+
+Now we calculate the posterior using Bayes law where the multiplication
+ is element wise:
+\begin_inset Formula 
+\begin{align*}
+p\left(\omega|x\right) & =\frac{p\left(x|\omega\right)p\left(\omega\right)}{p\left(x\right)}=\frac{p\left(x|\omega\right)p\left(\omega\right)}{\sum_{\omega}p\left(x|\omega\right)p\left(\omega\right)}\\
+\text{Vectorized Posterior calculation:} & \frac{\left(\begin{array}{ccc}
+0.8 & 0.5 & 0.1\\
+0.2 & 0.5 & 0.9
+\end{array}\right)\cdot\left(\begin{array}{ccc}
+0.2 & 0.4 & 0.4\\
+0.2 & 0.4 & 0.4
+\end{array}\right)}{\left(\left(\begin{array}{ccc}
+0.8 & 0.5 & 0.1\\
+0.2 & 0.5 & 0.9
+\end{array}\right)\cdot\left(\begin{array}{ccc}
+0.2 & 0.4 & 0.4\\
+0.2 & 0.4 & 0.4
+\end{array}\right)\right)\left(\begin{array}{cc}
+1 & 1\\
+1 & 1\\
+1 & 1
+\end{array}\right)}=\frac{\left(\begin{array}{ccc}
+0.16 & 0.2 & 0.04\\
+0.04 & 0.2 & 0.36
+\end{array}\right)}{\left(\begin{array}{ccc}
+0.4 & 0.4 & 0.4\\
+0.6 & 0.6 & 0.6
+\end{array}\right)}\approx\left(\begin{array}{ccc}
+0.4 & 0.5 & 0.1\\
+0.066 & 0.33 & 0.6
+\end{array}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we can calculate the conditional risk for each of the different observations
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R=\left[\begin{array}{cc}
+R\left[\text{Attending}|\text{Interesting}\right] & R\left[\text{Attending}|\text{Boring}\right]\\
+R\left[\text{Not Attending}|\text{Interesting}\right] & R\left[\text{Not Attending}|\text{Boring}\right]
+\end{array}\right]=\left(\begin{array}{ccc}
+0 & 7 & 10\\
+20 & 5 & 0
+\end{array}\right)\cdot\left(\begin{array}{ccc}
+0.4 & 0.5 & 0.1\\
+0.066 & 0.33 & 0.6
+\end{array}\right)^{T}\approx\left(\begin{array}{cc}
+4.5 & 8.33\\
+10.5 & 0.3
+\end{array}\right)
+\]
+
+\end_inset
+
+Now we can notice that the optimal strategy is as follows:
+\begin_inset Formula 
+\[
+\delta^{*}\left(x\right)=\begin{cases}
+\text{Attending} & x=\text{Interesting}\\
+\text{Not Attending} & x=\text{Boring}
+\end{cases}
+\]
+
+\end_inset
+
+This is true since any other action will increase out conditional risk,
+ now we calculate the overall risk for 
+\begin_inset Formula $\delta^{*}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+R\left[\delta^{*}\right]=R\left[\delta^{*}|\text{Interesting}\right]\cdot p\left(\text{Interesting}\right)+R\left[\delta^{*}|\text{Boring}\right]\cdot p\left(\text{Boring}\right)=4.5\cdot0.4+0.3\cdot0.6=1.98
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 3
+\end_layout
+
+\begin_layout Standard
+Show that the total risk of any stochastic policy 
+\begin_inset Formula $\pi$
+\end_inset
+
+ cannot be better than the total risk of the optimal deterministic strategy
+ 
+\begin_inset Formula $R\left[\delta^{*}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Answer:
+\series default
+ From definition for every observation 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ strategy 
+\begin_inset Formula $\delta^{*}$
+\end_inset
+
+ is chosen such that it minimizes risk, so any strategy that does not have
+ zero probability for any action besides 
+\begin_inset Formula $\delta^{*}\left(x\right)$
+\end_inset
+
+ will increase risk - Therefore total risk of any stochastic policy 
+\begin_inset Formula $\pi$
+\end_inset
+
+ as the expected total risk, cannot be better than the total risk of the
+ optimal deterministic strategy.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 4
+\end_layout
+
+\begin_layout Standard
+We define state conditional risk, 
+\begin_inset Formula $R\left[\delta|\omega\right]:=\sum_{x}\lambda\left(\delta\left(x\right),\omega\right)p\left(x|\omega\right)$
+\end_inset
+
+ The minmax approach tries to minimize the risk under the worst case assumption,
+ 
+\begin_inset Formula 
+\[
+\delta_{mm}:=\arg\min_{\delta}\max_{\omega}R\left[\delta|\omega\right]
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Find 
+\begin_inset Formula $\delta_{mm}$
+\end_inset
+
+ for the case presented in question 2.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Answer:
+\series default
+ The code is added in a separate file, the answer is with each strategy
+ and total state conditional risk:
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+{'Interesting': 'Attending', 'Boring': 'Attending'} 10.0
+\end_layout
+
+\begin_layout Plain Layout
+
+{'Interesting': 'Attending', 'Boring': 'Not Attending'} 6.0
+\end_layout
+
+\begin_layout Plain Layout
+
+{'Interesting': 'Not Attending', 'Boring': 'Attending'} 16.0
+\end_layout
+
+\begin_layout Plain Layout
+
+{'Interesting': 'Not Attending', 'Boring': 'Not Attending'} 20.0
+\end_layout
+
+\begin_layout Plain Layout
+
+The minmax strategy is: {'Interesting': 'Attending', 'Boring': 'Not Attending'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Define the following stochastic policy 
+\begin_inset Formula $\pi$
+\end_inset
+
+ : If the lecture was interesting, the student will take the course with
+ probability 0.9.
+ If the lecture is boring the student will leave the course.
+ Compute the state conditional risk of this stochastic policy.
+ What can you conclude about non-determinism in the minmax approach compared
+ to the Bayesian approach? 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Answer:
+\series default
+ Lets calculate:
+\begin_inset Formula 
+\begin{align*}
+R\left[\pi|\text{Good}\right] & =\sum_{x}\lambda\left(\text{A},\text{G}\right)p\left(x|\text{G}\right)p\left(\pi\left(x\right)=\text{A}\right)+\lambda\left(\text{NA},\text{G}\right)p\left(x|\text{G}\right)p\left(\pi\left(x\right)=\text{NA}\right)\\
+ & =20\cdot0.8\cdot p\left(\pi\left(\text{I}\right)=\text{NA}\right)+20\cdot0.2\cdot p\left(\pi\left(\text{B}\right)=\text{NA}\right)=20\cdot0.8\cdot0.1+20\cdot0.2=5.6\\
+R\left[\pi|\text{Mediocre}\right] & =\sum_{x}\lambda\left(\text{A},\text{M}\right)p\left(x|\text{M}\right)p\left(\pi\left(x\right)=\text{A}\right)+\lambda\left(\text{NA},\text{M}\right)p\left(x|\text{M}\right)p\left(\pi\left(x\right)=\text{NA}\right)\\
+ & =7\cdot0.5\cdot0.9+5\cdot0.5\cdot0.1+5\cdot0.5=5.9\\
+R\left[\pi|\text{Bad}\right] & =\sum_{x}\lambda\left(\text{A},\text{B}\right)p\left(x|\text{B}\right)p\left(\pi\left(x\right)=\text{A}\right)+\lambda\left(\text{NA},\text{B}\right)p\left(x|\text{B}\right)p\left(\pi\left(x\right)=\text{NA}\right)\\
+ & =10\cdot0.1\cdot0.9=0.9
+\end{align*}
+
+\end_inset
+
+We notice that when comparing this result to the result of all possible
+ deterministic strategies we get that the state conditional risk is lower.
+ Meaning we have the ability to lower out total conditioned risk by introducing
+ a stochastic strategy.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 5
+\end_layout
+
+\begin_layout Standard
+Consider a Bayesian decision problem with two world states, where 
+\begin_inset Formula $p\left(\omega_{0}\right)=p\left(\omega_{1}\right)$
+\end_inset
+
+.
+ The observation are sampled from a normal distribution the depends on 
+\begin_inset Formula $\omega_{i}$
+\end_inset
+
+.
+ Assume a binary action, and cost function 
+\begin_inset Formula $\lambda\left(\alpha_{i}|\omega_{j}\right)=1-\delta_{ij}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $X|\omega_{i}\sim\mathcal{N}\left(0,\sigma_{i}^{2}\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $\sigma_{0}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{1}=2$
+\end_inset
+
+.
+ Find the optimal strategy in this case.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Answer:
+\series default
+ From Q1 we know that for a binary Bayesian decision problem 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ is the correct strategy iff 
+\begin_inset Formula 
+\[
+\frac{p\left(x|\omega_{0}\right)}{p\left(x|\omega_{1}\right)}\geq\frac{p\left(\omega_{1}\right)\left(\lambda_{01}-\lambda_{11}\right)}{p\left(\omega_{0}\right)\left(\lambda_{10}-\lambda_{00}\right)}
+\]
+
+\end_inset
+
+Now we can input our parameters, and find the boundary for which 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ is the optimal strategy or 
+\begin_inset Formula $\alpha_{1}$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{gather*}
+2e^{\frac{x^{2}}{8}-\frac{x^{2}}{2}}=2e^{-\frac{x^{2}}{2}}\cdot e^{\frac{x^{2}}{8}}=\frac{2e^{-\frac{x^{2}}{2}}}{e^{-\frac{x^{2}}{8}}}=\frac{\frac{1}{\sqrt{2\pi\sigma_{0}^{2}}}e^{-\frac{x^{2}}{2\sigma_{0}^{2}}}}{\frac{1}{\sqrt{2\pi\sigma_{1}^{2}}}e^{-\frac{x^{2}}{2\sigma_{1}^{2}}}}=\frac{p\left(x|\omega_{0}\right)}{p\left(x|\omega_{1}\right)}\geq\frac{p\left(\omega_{1}\right)\left(\lambda_{01}-\lambda_{11}\right)}{p\left(\omega_{0}\right)\left(\lambda_{10}-\lambda_{00}\right)}=\frac{\left(1-\delta_{01}\right)-\left(1-\delta_{11}\right)}{\left(1-\delta_{10}\right)-\left(1-\delta_{00}\right)}=1\\
+\frac{-3x^{2}}{8}=\frac{x^{2}}{8}-\frac{4x^{2}}{8}=\ln\left(e^{\frac{x^{2}}{8}-\frac{x^{2}}{2}}\right)\geq\ln\left(2^{-1}\right)=-\ln\left(2\right)\\
+x^{2}\leq\frac{8\ln\left(2\right)}{3}
+\end{gather*}
+
+\end_inset
+
+Meaning we choose 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ iff 
+\begin_inset Formula $x\in\left[-\frac{8\ln\left(2\right)}{3},\frac{8\ln\left(2\right)}{3}\right]$
+\end_inset
+
+ otherwise 
+\begin_inset Formula $\alpha_{1}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a 2-dimensional random variable, i.e 
+\begin_inset Formula $X|\omega_{i}\sim\mathcal{N}\left(\mu_{i},\Sigma_{i}\right)$
+\end_inset
+
+.
+ Show that the decision boundary is defined by a quadratic equation i.e that
+ there is a matrix 
+\begin_inset Formula $A$
+\end_inset
+
+, a vector 
+\begin_inset Formula $b$
+\end_inset
+
+, and scalar 
+\begin_inset Formula $c$
+\end_inset
+
+, s.t 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ is chosen iff 
+\begin_inset Formula $x^{T}Ax+b^{T}x+c\geq0$
+\end_inset
+
+.
+ What happens when 
+\begin_inset Formula $\Sigma_{0}=\Sigma_{1}$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Answer:
+\series default
+ As in the past question we repeat the process this time in 2D:
+\begin_inset Formula 
+\[
+\frac{\frac{1}{\sqrt{\left(2\pi\right)^{2}\det\left(\Sigma_{0}\right)}}e^{\left(-\frac{1}{2}\left(x-\mu_{0}\right)^{T}\Sigma_{0}^{-1}\left(x-\mu_{0}\right)\right)}}{\frac{1}{\sqrt{\left(2\pi\right)^{2}\det\left(\Sigma_{1}\right)}}e^{\left(-\frac{1}{2}\left(x-\mu_{1}\right)^{T}\Sigma_{1}^{-1}\left(x-\mu_{1}\right)\right)}}=\frac{p\left(x|\omega_{0}\right)}{p\left(x|\omega_{1}\right)}\geq1
+\]
+
+\end_inset
+
+Meaning our we choose 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ iff
+\begin_inset Formula 
+\begin{align*}
+ & \ln\left(\frac{\frac{1}{\sqrt{\left(2\pi\right)^{2}\det\left(\Sigma_{0}\right)}}e^{\left(-\frac{1}{2}\left(x-\mu_{0}\right)^{T}\Sigma_{0}^{-1}\left(x-\mu_{0}\right)\right)}}{\frac{1}{\sqrt{\left(2\pi\right)^{2}\det\left(\Sigma_{1}\right)}}e^{\left(-\frac{1}{2}\left(x-\mu_{1}\right)^{T}\Sigma_{1}^{-1}\left(x-\mu_{1}\right)\right)}}\right)\geq0\\
+\Leftrightarrow & \ln\left(\frac{1}{\sqrt{\left(2\pi\right)^{2}\det\left(\Sigma_{0}\right)}}\right)-\ln\left(\frac{1}{\sqrt{\left(2\pi\right)^{2}\det\left(\Sigma_{1}\right)}}\right)+\ln\left(e^{\left(-\frac{1}{2}\left(x-\mu_{0}\right)^{T}\Sigma_{0}^{-1}\left(x-\mu_{0}\right)\right)}\right)-\ln\left(e^{\left(-\frac{1}{2}\left(x-\mu_{1}\right)^{T}\Sigma_{1}^{-1}\left(x-\mu_{1}\right)\right)}\right)\geq0\\
+\Leftrightarrow & \frac{1}{2}\ln\left(\frac{\det\left(\Sigma_{1}\right)}{\det\left(\Sigma_{0}\right)}\right)+\ln\left(e^{\frac{1}{2}\left(x-\mu_{1}\right)^{T}\Sigma_{1}^{-1}\left(x-\mu_{1}\right)-\frac{1}{2}\left(x-\mu_{0}\right)^{T}\Sigma_{0}^{-1}\left(x-\mu_{0}\right)}\right)\geq0\\
+\Leftrightarrow & \frac{1}{2}\ln\left(\frac{\det\left(\Sigma_{1}\right)}{\det\left(\Sigma_{0}\right)}\right)+\frac{1}{2}\left(x-\mu_{1}\right)^{T}\Sigma_{1}^{-1}\left(x-\mu_{1}\right)-\frac{1}{2}\left(x-\mu_{0}\right)^{T}\Sigma_{0}^{-1}\left(x-\mu_{0}\right)\geq0\\
+\Leftrightarrow & \left(x-\mu_{1}\right)^{T}\Sigma_{1}^{-1}\left(x-\mu_{1}\right)-\left(x-\mu_{0}\right)^{T}\Sigma_{0}^{-1}\left(x-\mu_{0}\right)+\ln\left(\frac{\det\left(\Sigma_{1}\right)}{\det\left(\Sigma_{0}\right)}\right)\geq0\\
+\Leftrightarrow & x^{T}\Sigma_{1}^{-1}x-x^{T}\Sigma_{1}^{-1}\mu_{1}-\mu_{1}^{T}\Sigma_{1}^{-1}x-\mu_{1}^{T}\Sigma_{1}^{-1}\mu_{1}-x^{T}\Sigma_{0}^{-1}x-\mu_{0}^{T}\Sigma_{0}^{-1}\mu_{0}+\mu_{0}^{T}\Sigma_{0}^{-1}x+x^{T}\Sigma_{0}^{-1}\mu_{0}+\ln\left(\frac{\det\left(\Sigma_{1}\right)}{\det\left(\Sigma_{0}\right)}\right)\geq0\\
+\Leftrightarrow & x^{T}\underset{A}{\underbrace{\left(\Sigma_{1}^{-1}-\Sigma_{0}^{-1}\right)}}x+\underset{b^{T}}{\underbrace{2\left(\mu_{0}^{T}\Sigma_{0}^{-1}-\mu_{1}^{T}\Sigma_{1}^{-1}\right)}}x+\underset{c}{\underbrace{\ln\left(\frac{\det\left(\Sigma_{1}\right)}{\det\left(\Sigma_{0}\right)}\right)-\mu_{0}^{T}\Sigma_{0}^{-1}\mu_{0}-\mu_{1}^{T}\Sigma_{1}^{-1}\mu_{1}}}\geq0
+\end{align*}
+
+\end_inset
+
+We found 
+\begin_inset Formula $A,b,c$
+\end_inset
+
+ as requested such that the decision boundary is the solution to the quadratic
+ equation 
+\begin_inset Formula $x^{T}Ax+b^{T}x+c\geq0$
+\end_inset
+
+.
+ Now lets assume 
+\begin_inset Formula $\Sigma_{0}=\Sigma_{1}$
+\end_inset
+
+ meaning 
+\begin_inset Formula $\frac{\det\left(\Sigma_{1}\right)}{\det\left(\Sigma_{0}\right)}=1$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+ & x^{T}\left(\Sigma^{-1}-\Sigma^{-1}\right)x+2\left(\mu_{0}^{T}\Sigma^{-1}-\mu_{1}^{T}\Sigma^{-1}\right)x+\ln\left(\frac{\det\left(\Sigma\right)}{\det\left(\Sigma\right)}\right)-\mu_{0}^{T}\Sigma^{-1}\mu_{0}-\mu_{1}^{T}\Sigma^{-1}\mu_{1}\geq0\\
+\Leftrightarrow & 2\left(\mu_{0}^{T}-\mu_{1}^{T}\right)\Sigma^{-1}x-\mu_{0}^{T}\Sigma^{-1}\mu_{0}-\mu_{1}^{T}\Sigma^{-1}\mu_{1}\geq0
+\end{align*}
+
+\end_inset
+
+Now the equation becomes a linear equation with respect to 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 6
+\end_layout
+
+\end_body
+\end_document
