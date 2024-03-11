@@ -1216,5 +1216,129 @@ Now the equation becomes a linear equation with respect to
 Problem 6
 \end_layout
 
+\begin_layout Enumerate
+Show that given some prior 
+\begin_inset Formula $P\left(\omega\right)$
+\end_inset
+
+ the posterior probabilities can be updated sequentially as follows:
+\begin_inset Formula 
+\[
+P\left(\omega|x_{1},...,x_{n}\right)\propto P\left(x_{n}|\omega\right)P\left(\omega|x_{1},...,x_{n-1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Answer:
+\series default
+ We notice using the definition for conditional probability and Bayes rule:
+\begin_inset Formula 
+\begin{align*}
+P\left(\omega|x_{1},...,x_{n}\right) & =\frac{P\left(x_{1},...,x_{n}|\omega\right)P\left(\omega\right)}{P\left(x_{1},...,x_{n}\right)}=\frac{P\left(x_{1},...,x_{n-1}|\omega\right)P\left(x_{n}|\omega\right)P\left(\omega\right)}{P\left(x_{1},...,x_{n-1}\right)P\left(x_{n}\right)}\\
+ & =\frac{\frac{P\left(\omega|x_{1},...,x_{n-1}\right)P\left(x_{1},...,x_{n-1}\right)}{P\left(\omega\right)}P\left(x_{n}|\omega\right)P\left(\omega\right)}{P\left(x_{1},...,x_{n-1}\right)P\left(x_{n}\right)}\\
+ & =\frac{P\left(\omega|x_{1},...,x_{n-1}\right)P\left(x_{n}|\omega\right)}{P\left(x_{n}\right)}\propto P\left(x_{n}|\omega\right)P\left(\omega|x_{1},...,x_{n-1}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Posterior Probabilities of Language given 
+\begin_inset Formula $N$
+\end_inset
+
+ letters from text as a function of 
+\begin_inset Formula $N$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Codding/Ex1/posteriors.png
+	lyxscale 50
+	scale 35
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Log-Likelihood given 
+\begin_inset Formula $N$
+\end_inset
+
+ letters from text as a function of 
+\begin_inset Formula $N$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Codding/Ex1/loglikelihood.png
+	lyxscale 50
+	scale 40
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
